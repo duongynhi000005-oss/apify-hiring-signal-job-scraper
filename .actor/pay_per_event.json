@@ -1,0 +1,9 @@
+{
+  "actorChargeEvents": {
+    "job-scraped": {
+      "eventTitle": "Job Posting & Hiring Signal Extracted",
+      "eventDescription": "Charged once per structured job posting enriched with role metadata, ATS classification, workplace type, and tech stack signals.",
+      "eventPriceUsd": 0.002
+    }
+  }
+}
