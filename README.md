@@ -1,7 +1,20 @@
-# B2B Hiring Signal & ATS Job Posting Scraper (Apify Pay-per-Event Actor)
+# ATS Career Page Job Scraper & B2B Hiring Intent Signal Engine
 
-Extracts structured job postings, compensation ranges, workplace policy (`Remote`, `Hybrid`, `On-site`), and B2B tech-stack buying signals from **Greenhouse**, **Lever**, **Ashby**, **Workable**, and company career pages (`Schema.org/JobPosting`).
+Extracts structured open roles, departments, remote status, salary ranges, ATS platform (Greenhouse, Lever, Ashby, Workable, Workday), required tech stack signals, and a 0-100 B2B Hiring Velocity Score from company career pages.
 
-## Monetization (`Pay-per-Event`)
-- **Event Name**: `job-scraped` (`$0.002 USD` per structured job posting extracted)
-- **Built for**: B2B sales intelligence teams, recruiting agencies, and AI SDR agents monitoring company growth and technology adoption signals.
+## Why Use ATS Career Page Job Scraper & B2B Hiring Intent Signal Engine?
+- **Production-Grade & Zero Maintenance**: Built specifically for automated workflows in **n8n, Make.com, Zapier, Clay, LangChain, and MCP servers**.
+- **Pay-Per-Event (PPE) Transparent Pricing**: Only **$0.004 per enriched result** (`$4.00 per 1,000 results`) with structured JSON, CSV, and Excel export.
+- **Fast & Lightweight**: Uses high-concurrency HTTP parsing and structured JSON-LD / API discovery without expensive headless browser overhead.
+
+## Key Features
+1. **Deep Structured Extraction**: Automatically normalizes every output record against a strict dataset schema.
+2. **Plug-and-Play API & Webhook Integration**: Call directly via `POST https://api.apify.com/v2/acts/huynguyen-data-cloud~hiring-signal-job-scraper/run-sync-get-dataset-items`.
+3. **Built-in Data Hygiene**: Deduplicates records, filters false positives, and computes actionable scoring metrics.
+
+## Quick Start (cURL / API)
+```bash
+curl -X POST "https://api.apify.com/v2/acts/huynguyen-data-cloud~hiring-signal-job-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"startUrls": [{"url": "https://apify.com/careers"}]}'
+```
