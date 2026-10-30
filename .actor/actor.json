@@ -1,0 +1,52 @@
+{
+  "actorSpecification": 1,
+  "name": "b2b-hiring-signal-job-scraper",
+  "title": "B2B Hiring Signal & ATS Job Posting Scraper (PPE)",
+  "description": "Extracts structured job postings, compensation bands, remote policy, tech stack keywords, and B2B hiring velocity signals from Greenhouse, Lever, Ashby, Workable, and company career pages (Schema.org/JobPosting).",
+  "version": "1.0",
+  "meta": {
+    "templateId": "js-crawlee-cheerio"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Extracted B2B Job Postings & Hiring Signals",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "companyName",
+              "jobTitle",
+              "department",
+              "location",
+              "workplaceType",
+              "salaryRange",
+              "techStackSignals",
+              "atsProvider",
+              "applyUrl",
+              "postedAt"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "companyName": { "label": "Company", "format": "text" },
+              "jobTitle": { "label": "Job Title", "format": "text" },
+              "department": { "label": "Department", "format": "text" },
+              "location": { "label": "Location", "format": "text" },
+              "workplaceType": { "label": "Workplace", "format": "text" },
+              "salaryRange": { "label": "Salary Range", "format": "object" },
+              "techStackSignals": { "label": "Tech Stack Signals", "format": "array" },
+              "atsProvider": { "label": "ATS Provider", "format": "text" },
+              "applyUrl": { "label": "Apply URL", "format": "link" },
+              "postedAt": { "label": "Posted At", "format": "text" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
