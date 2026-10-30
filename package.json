@@ -1,17 +1,14 @@
 {
-  "name": "apify-hiring-signal-job-scraper",
+  "name": "hiring-signal-job-scraper",
   "version": "1.0.0",
   "type": "module",
-  "description": "ATS Job Board & B2B Hiring Signal Scraper (Greenhouse, Lever, Ashby, Workable & Schema.org JobPosting) with Pay-per-Event charging",
+  "description": "Extracts structured open roles, departments, remote status, salary ranges, ATS platform (Greenhouse, Lever, Ashby, Workable, Workday), required tech stack signals, and a 0-100 B2B Hiring Velocity Score from company career pages.",
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js"
   },
   "dependencies": {
-    "apify": "^3.2.6",
-    "crawlee": "^3.11.5"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "apify": "^3.2.0",
+    "cheerio": "^1.0.0"
   }
 }
