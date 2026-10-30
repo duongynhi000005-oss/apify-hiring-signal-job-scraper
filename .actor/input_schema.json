@@ -1,0 +1,32 @@
+{
+  "title": "B2B Hiring Signal & ATS Job Posting Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Career Page or ATS Board URLs",
+      "type": "array",
+      "description": "List of Greenhouse (boards.greenhouse.io/company), Lever (jobs.lever.co/company), Ashby, Workable, or company career page URLs.",
+      "editor": "requestListSources",
+      "prefill": [
+        { "url": "https://boards.greenhouse.io/embed/job_board?for=stripe" }
+      ]
+    },
+    "keywordFilter": {
+      "title": "Role / Keyword Filter (Optional)",
+      "type": "string",
+      "description": "Optional case-insensitive regex or substring filter on job title or department (e.g. 'Engineer|Security|AI|Sales').",
+      "editor": "textfield",
+      "default": ""
+    },
+    "maxJobsPerBoard": {
+      "title": "Max Jobs per Company Board",
+      "type": "integer",
+      "description": "Maximum number of job postings to extract per target URL.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 500
+    }
+  },
+  "required": ["startUrls"]
+}
