@@ -1,0 +1,23 @@
+{
+  "title": "ATS Career Page & B2B Hiring Signal Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Company Career Page or ATS Board URLs",
+      "type": "array",
+      "description": "Career pages or Greenhouse/Lever/Ashby/Workable board URLs.",
+      "editor": "requestListSources",
+      "default": [
+        {
+          "url": "https://apify.com/careers"
+        }
+      ],
+      "prefill": [
+        {
+          "url": "https://apify.com/careers"
+        }
+      ]
+    }
+  }
+}
