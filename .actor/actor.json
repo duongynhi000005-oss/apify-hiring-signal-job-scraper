@@ -12,40 +12,64 @@
   "storages": {
     "dataset": {
       "actorSpecification": 1,
-      "title": "Extracted B2B Job Postings & Hiring Signals",
+      "fields": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "url"
+          },
+          "title": {
+            "type": "string",
+            "title": "title"
+          },
+          "company": {
+            "type": "string",
+            "title": "company"
+          },
+          "location": {
+            "type": "string",
+            "title": "location"
+          },
+          "employmentType": {
+            "type": "string",
+            "title": "employmentType"
+          },
+          "datePosted": {
+            "type": "string",
+            "title": "datePosted"
+          }
+        }
+      },
       "views": {
         "overview": {
-          "title": "Overview",
+          "title": "Extracted Job Postings & Hiring Signals",
           "transformation": {
             "fields": [
-              "companyName",
-              "jobTitle",
-              "department",
+              "url",
+              "title",
+              "company",
               "location",
-              "workplaceType",
-              "salaryRange",
-              "techStackSignals",
-              "atsProvider",
-              "applyUrl",
-              "postedAt"
+              "employmentType",
+              "datePosted"
             ]
           },
           "display": {
             "component": "table",
-            "properties": {
-              "companyName": { "label": "Company", "format": "text" },
-              "jobTitle": { "label": "Job Title", "format": "text" },
-              "department": { "label": "Department", "format": "text" },
-              "location": { "label": "Location", "format": "text" },
-              "workplaceType": { "label": "Workplace", "format": "text" },
-              "salaryRange": { "label": "Salary Range", "format": "object" },
-              "techStackSignals": { "label": "Tech Stack Signals", "format": "array" },
-              "atsProvider": { "label": "ATS Provider", "format": "text" },
-              "applyUrl": { "label": "Apply URL", "format": "link" },
-              "postedAt": { "label": "Posted At", "format": "text" }
-            }
+            "properties": {}
           }
         }
+      }
+    }
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Extracted Job Postings & Hiring Signals Output",
+    "properties": {
+      "dataset": {
+        "type": "string",
+        "title": "Extracted Job Postings & Hiring Signals",
+        "template": "{{links.apiDefaultDatasetUrl}}/items"
       }
     }
   }
